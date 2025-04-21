@@ -5,7 +5,6 @@ from typing import List, Optional
 
 app = FastAPI()
 
-# Allow your React frontend to talk to the backend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
@@ -13,11 +12,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# In-memory DB for demo/testing (replace with DB later)
 todos = []
 id_counter = 1
 
-# Schema
 class Todo(BaseModel):
     id: int
     title: str
