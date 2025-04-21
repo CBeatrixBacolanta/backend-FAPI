@@ -7,10 +7,14 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",  # For local dev
+        "https://cbeatrixbacolanta.github.io"  # For the deployed frontend
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 todos = []
 id_counter = 1
